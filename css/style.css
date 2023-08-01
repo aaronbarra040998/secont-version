@@ -1,0 +1,241 @@
+/* Reset CSS */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #313131;
+}
+
+main {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+main section {
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    opacity: 0; /* Set the initial opacity to 0 */
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+section {
+    background-image: url("/img/fond-pag.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Query for adjusting background images in sections */
+/* section:nth-of-type(1) {
+    background-image: url("/img/fond-pag.png");
+    background-size: cover;
+    background-position: center;
+} */
+
+/* Add background colors to other sections for better visibility */
+/* section:nth-of-type(2) {
+    background-image: url("/img/fond-pag.png");
+    background-size: cover;
+    background-position: center;
+} */
+/* 
+section:nth-of-type(3) {
+    background-color: #f04a63;
+}
+
+section:nth-of-type(4) {
+    background-color: #5D4388;
+}
+
+section:nth-of-type(5) {
+    background-color: #5EE0C2;
+}
+
+section:nth-of-type(6) {
+    background-color: #f04a63;
+}
+
+section:nth-of-type(7) {
+    background-color: #5D4388;
+}
+
+section:nth-of-type(8) {
+    background-color: #5EE0C2;
+} */
+
+/* Styles for the first section */
+#seccion-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+#seccion-1 img {
+    margin: 0 auto;
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+#seccion-1 .central img {
+    margin: 0 auto;
+    display: block;
+    width: 500px;
+    height: 300px;
+    margin-bottom: 30%;
+}
+
+/* New styles for the superimposed buttons */
+#seccion-1 nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#seccion-1 button {
+    display: block;
+    background-color: rgba(248, 97, 97, 0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#seccion-1 button a {
+    color: white;
+    text-decoration: none;
+}
+
+#seccion-1 button:hover {
+    background-color: #5ee0c200;
+}
+
+/* Additional styles for positioning the 'div cont' elements in a circle */
+#seccion-1 .cont-1,
+#seccion-1 .cont-2,
+#seccion-1 .cont-3,
+#seccion-1 .cont-4,
+#seccion-1 .cont-5,
+#seccion-1 .cont-6,
+#seccion-1 .cont-7,
+#seccion-1 .cont-8 {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* You can also adjust the positioning if needed */
+/* nosotros */
+#seccion-1 .cont-1 {
+    transform: translate(-350px, -30px);
+}
+
+/* contacto */
+#seccion-1 .cont-2 {
+    transform: translate(230px, -160px);
+}
+
+/* proyectos */
+#seccion-1 .cont-3 {
+    transform: translate(320px, 0px);
+}
+
+/* trabajamos */
+#seccion-1 .cont-4 {
+    transform: translate(325px, 145px);
+}
+
+/* energia */
+#seccion-1 .cont-5 {
+    transform: translate(255px, 260px);
+}
+
+/* redes */
+#seccion-1 .cont-6 {
+    transform: translate(-50px, 300px);
+    display: flex; /* Set the container to use Flexbox */
+    flex-direction: column; /* Set the flex direction to column */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+}
+
+/* seguridad ele */
+#seccion-1 .cont-7 {
+    transform: translate(-335px, 225px);
+}
+
+/* telecomunicaciones */
+#seccion-1 .cont-8 {
+    transform: translate(-455px, 100px);
+}
+
+#seccion-1 .cont-6 button {
+    margin-left: 125%;
+    position: absolute;
+    top: 120px;
+    /* Adjust the distance from the top */
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+    #seccion-1 .cont-1,
+    #seccion-1 .cont-2,
+    #seccion-1 .cont-3,
+    #seccion-1 .cont-4,
+    #seccion-1 .cont-5,
+    #seccion-1 .cont-6,
+    #seccion-1 .cont-7,
+    #seccion-1 .cont-8 {
+        width: 40px;
+        height: 40px;
+    }
+
+    #seccion-1 img {
+        width: 80px;
+        height: 80px;
+    }
+
+    #seccion-1 .central img {
+        width: 300px;
+        height: 200px;
+    }
+}
+    

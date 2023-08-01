@@ -1,0 +1,230 @@
+/* Define la fuente personalizada 'Futura' */
+@font-face {
+    font-family: 'Futura';
+    src: local('Futura Bold'), local('Futura-Bold'),
+        url('FuturaLT-Bold.woff2') format('woff2'),
+        url('FuturaLT-Bold.woff') format('woff'),
+        url('FuturaLT-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Estilos para el elemento con clase 'segundo' */
+.segundo {
+    font-family: 'Futura', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+/* Estilos para el elemento con clase 'tercer' */
+.tercer {
+    font-family: 'Futura', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilos para el título con clase 'titulo' */
+.titulo {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 10%;
+    bottom: 10%;
+    left: 6%;
+    right: 2%;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.titulo h1 {
+    font-size: 50px;
+    color: white;
+    margin: 20px;
+}
+
+.titulo img {
+    height: 6em;
+    order: 1;
+    width: 100px;
+    margin-left: 2%;
+}
+
+.titulo:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para el círculo con clase 'circle-content' */
+.circle-content h1 {
+    color: rgb(1, 1, 109);
+}
+
+/* Estilos para el mensaje del círculo con clase 'circle-message' */
+.circle-message p {
+    color: rgb(1, 1, 109);
+}
+
+/* Variables */
+:root {
+    --transition-duration: 0.3s;
+}
+
+/* Estilos para el contenedor de círculos con clase 'circle-container' */
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+}
+
+/* Estilos para el círculo con clase 'circle' */
+.circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    margin: 50px;
+}
+
+/* Estilos para el contenido dentro del círculo con clase 'circle-content' */
+.circle-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: top var(--transition-duration) ease-in-out, opacity var(--transition-duration) ease-in-out;
+}
+
+/* Estilos al pasar el cursor sobre el círculo */
+.circle:hover .circle-content {
+    top: 10%;
+    opacity: 0;
+}
+
+/* Estilos para el mensaje "Hola Mundo" */
+.circle-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    z-index: 1;
+    transition: opacity var(--transition-duration) ease-in-out;
+    width: 80%;
+    text-align: center;
+}
+
+/* Estilos al pasar el cursor sobre el círculo */
+.circle:hover .circle-message {
+    opacity: 1;
+}
+
+/* Estilos para la lista de navegación con clase 'l-side-nav' */
+.l-side-nav {
+    left: 50px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+    margin-left: 30%;
+    margin-top: 15%;
+}
+
+/* Estilos para la lista de navegación con clase 'side-nav' */
+.side-nav {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilos para los elementos de la lista de navegación con clase 'side-nav li' */
+.side-nav li {
+    position: relative;
+    padding: 10px;
+    color: white;
+    margin-bottom: 80px;
+}
+
+/* Estilos para el pseudo-elemento antes de los elementos de la lista de navegación */
+.side-nav li::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -2px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Estilos para los elementos de la lista de navegación al pasar el cursor sobre ellos */
+.side-nav li:hover {
+    cursor: pointer;
+}
+
+/* Estilos para el pseudo-elemento antes de los elementos de la lista de navegación al pasar el cursor sobre ellos */
+.side-nav li:hover::before {
+    opacity: 1;
+}
+
+/* Estilos para la lista no ordenada con clase 'ul' */
+ul {
+    border-left: 5px solid white;
+    padding-left: 10px;
+}
+
+/* Estilos para el elemento con clase 'mensaje' */
+.mensaje {
+    color: black;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 9%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    height: 60px;
+}
+
+/* Estilos para el elemento con clase 'mensaje' al pasar el cursor sobre él */
+.side-nav li:hover .mensaje {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition-delay: 0s, 0s, 0s;
+}
+
+/* Estilos para los elementos de la lista de navegación al pasar el cursor sobre el texto */
+.side-nav li span:hover {
+    transform: scale(1.1);
+}
